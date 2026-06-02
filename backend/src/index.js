@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const JWT_SECRET = "my-super-secret-key-2026";
 
 const UPLOADS_DIR = path.join(__dirname, "../uploads");
@@ -283,7 +283,7 @@ app.put("/api/admin/comments/:id/reject", auth, (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0,0,0,0", () => {
   console.log(`🚀 Server su http://localhost:${PORT}`);
   console.log(`🔐 admin / admin123`);
 });
