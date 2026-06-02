@@ -283,7 +283,7 @@ app.put("/api/admin/comments/:id/reject", auth, (req, res) => {
   res.json({ success: true });
 });
 
-app.listen(PORT, "0,0,0,0", () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server su http://localhost:${PORT}`);
   console.log(`🔐 admin / admin123`);
 });
